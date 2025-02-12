@@ -1,0 +1,51 @@
+﻿@using MyAspNetCoreApp.Wep.Controllers
+@{
+     ViewData["Title"] = "Index";
+}
+@model List<Product2>;
+
+@foreach (var item in Model)
+{
+    <p>@item.Id - @item.Name</p>
+}
+
+<h1> Ornek Controller, Index Sayfası</h1>
+
+@* 
+@{
+    var name = @ViewBag.name;
+    <p>@name</p>
+    
+
+}
+
+<p> @ViewBag.name</p>
+
+<p>@name</p>
+<hr />
+
+<p> Yaş: @ViewData["age"]</p>
+
+<h1>İSİMLER</h1>
+@foreach (var item in ViewData["names"] as List<string>)
+{
+    <p>@item</p>
+
+
+}
+
+
+<p>@ViewBag.person</p>
+ *@
+
+
+
+@* <p>@ViewBag.name </p> *@
+
+
+
+
+
+
+
+
