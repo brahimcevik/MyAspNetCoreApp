@@ -1,37 +1,59 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
-    var alert = "Bu bir uyarı messajıdır";
+    ViewData["title"] = "home page";
+    var product = new Product() { Id =1, Name= "İbrahim",Price=100,Stock=20};
 }
 
-@section Scripts
+
+
+@section css
 {
-    <script type="text/javascript">
-        
-    
-            // alert("Sayfamıza Hoşgeldiniz")
-    
-    
-    </script>
-}
-@section Css{
-     <link rel="stylesheet" href="~/css/example.css" />
-   
+
     <style>
-        h1{
-        color:red;
-        background-color:blue;
-        
-        }
 
     </style>
+
+
+}
+
+@section scripts
+{
+    
 }
 
 
 
-@* <partial name="_MenuPartialView"></partial> *@
+<div class="row">
+    <div class="col-md-4">
+
+        <partial name="~/PartialViews/_ProductListPartialView.cshtml" model="@ViewBag.productListPartialViewModel" />
+    </div>
+
+    <div class="col-md-4">
+@* 
+    1ci yol
+        @await Component.InvokeAsync("ProductList",new{Type=1}) *@
 
 
-<h1>Merhaba Dünya</h1>
-<hr />
-<h2>Merhaba Asp.Net ></h2>
- 
+
+        <vc:product-list type="1"></vc:product-list>
+
+    </div>
+
+    
+    <div class="col-md-4">
+
+
+        <italic>Asp.Net Core</italic>
+        <product-show product="product"></product-show>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+

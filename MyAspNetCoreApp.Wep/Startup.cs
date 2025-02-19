@@ -7,6 +7,7 @@ using Microsoft.Extensions.Hosting;
 using MyAspNetCoreApp.Wep.Models;
 using MyAspNetCoreApp.Wep.Helpers;
 using Microsoft.Extensions.DependencyInjection.Extensions;
+using System.Reflection;
 
 namespace MyAspNetCoreApp.Wep
 {
@@ -34,6 +35,7 @@ namespace MyAspNetCoreApp.Wep
             //services.AddSingleton<IHelper, Helper>();
 
             services.AddScoped<IHelper, Helper>();
+            services.AddAutoMapper(Assembly.GetExecutingAssembly());
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
